@@ -10,11 +10,10 @@ goto Test%N_Test%
 	set /A N_Test=%N_Test%+1
 	echo Has been worked the Test0%N_Test%?
 	CHOICE /N /C:YN /M "y (yes) / n (not)"
-
-if %errorlevel% == 1 goto yes
-if %errorlevel% == 2 (
-	goto Test%N_Test%
-)
+	if %errorlevel% == 1 goto yes
+	if %errorlevel% == 2 (
+		goto Test%N_Test%
+	)
 
 :Test1
 	cls
